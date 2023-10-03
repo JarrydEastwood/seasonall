@@ -1,0 +1,508 @@
+body {
+    font-family: "Poppins", sans-serif;
+  }
+
+  /* Header container */
+  #header {
+    margin: 0, auto;
+    width: 100vw;
+  }
+
+  /* I'll use breakpoints to make this scale better */
+  .travelImageClass{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height: auto;
+    position: fixed;
+    bottom: 0;
+    left: 15%;
+}
+
+  /* User location weather container */
+  .containerHeader {
+    width: 60vw;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 300%;
+    vertical-align: middle;
+  }
+  /* Small icon logo on left side of screen */
+  .headerLogo{
+    width: 10vw;
+    height: auto;
+    margin: 0 3vw;
+    position: absolute;
+    filter: brightness(0) invert(1);
+  }
+
+  /* Generic wrapper class */
+  .wrapper {
+    width: 90vw;
+    margin: 0 auto;
+  }
+  
+  /* Centers text for anything in this class */
+  .centerText {
+    text-align: center;
+  }
+  
+  /* Custom settings for the form */
+  .containerForm {
+    font-size: 1.5rem;
+    font-weight: 500;
+    background-color: rgba(255, 245, 228, 0.655);
+    color: rgb(60, 60, 60);
+    width: 30vw;
+    margin: 0 auto;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 6px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+      .containerForm p{
+        font-size: 1.5rem;
+        font-weight: 300;
+      }
+      
+      .containerForm input::placeholder{
+        color: #cdcdcd;
+        text-align: center;
+      }
+
+      .formText{
+        margin-bottom: 2vh;
+      }
+      
+
+      /* Wrapper for the location and weather data */
+  .infoWrapper {
+    width: 80vw;
+    margin: 0 auto;
+    margin-top: 30vh;
+    justify-content: center;
+    text-align: center;
+  }
+
+      /* Container for the for the location data */
+  .containerLocation {
+    max-width:100%;
+    width: 38vw;
+    word-break: break-all;
+    height: auto;
+    padding: 1vh 2vw;
+    background-color: rgb(255, 245, 228);
+    color: rgb(60, 60, 60);
+    margin: 1vh 1vw;
+    text-align: center;
+    line-height: 200%;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 6px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    z-index: 20;
+  }
+  
+    /* Container for the for the weather data */
+  .containerWeather {
+    max-width:100%;
+    width: 38vw;
+    word-break: break-all;
+    height: auto;
+    padding: 1vh 2vw;
+    background-color: rgb(255, 245, 228);
+    color: rgb(60, 60, 60);
+    margin: 1vh 1vw;
+    text-align: center;
+    line-height: 200%;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 6px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    z-index: 20;
+  }
+ 
+  /* Heading above photos - What City + Country can look like in Season */
+  .photoHeading h2{
+    font-family: "Poppins", sans-serif;
+    width: 80vw;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin: 2vh auto;
+    color: white;
+    vertical-align: middle;
+  }
+
+/* Setting heading text sizes and weights */
+  h1 {
+    font-size: 3rem;
+    font-weight: 600;
+  }
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+  
+  h3 {
+    font-size: 2rem;
+    font-weight: 400;
+  }
+  
+  h4 {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+  
+  p {
+    font-size: 1.25rem;
+    font-weight: 200;
+  }
+  
+  .title
+{
+    font-weight: 600;
+    line-height: 175%;
+}
+  
+/* Adds some space above things in this class  */
+  .topSpace {
+    margin-top: 1vh;
+  }
+    
+/* This is the div/container for the Icon on the loading screen */
+  #loadingImage {
+    height: 40vh;
+    width: 80vw;
+    margin: 5vh auto;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  /* Icon for loading screen, filtered to white so I didnt have to make a new white one. */
+  .logo{
+    filter: brightness(0) invert(1);
+    margin: 10vh auto;
+    text-align: center;
+    height: 20vh;
+    width: auto;
+    rotate: y 45deg;
+	  animation: loadingAnimation 3s linear forwards;
+  }  
+
+/* Animation to spin the Icon logo */
+  @keyframes loadingAnimation {
+    0% {rotate: y 45deg;}
+    20% {rotate: y 135deg;}
+    40% {rotate: y 225deg;}
+    60% {rotate: y 315deg;}
+    100% {rotate: y 360deg;}
+  }
+
+/* This is the div/container for the text on the loading screen */
+  .loadingText {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+
+/* This is the grey text on the loading screen */
+.loadingDestUnk{
+    color: #3e3e3e;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+  }
+  
+    
+  /* This is the white standard text for the Loading/Landing texting */
+  .landingText{
+    font-weight: 700;
+    position: relative;
+    color: #ffffff;
+    font-size: 4rem;
+  }
+  
+  /* This is the green fill for the Loading/Landing texting */
+  .landingText::before {
+    font-weight: 700;
+    position: absolute;
+    content: attr(data-text);
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* For some reason the height had to be 120% or their was white line in the bottom of the g in landing */
+    height: 120%;
+    color: #173a2c;
+    overflow: hidden;
+    animation: loading 2.5s linear forwards;
+    animation-delay: .3s;
+    font-size: 4rem;
+  }
+  /* Messing with loading time to make it look like its actually aware of whats going on, not just blanket delaying load... */
+  @keyframes loading {
+    0% {
+      width: 0;
+    }
+    20% {
+      width: 20%;
+    }
+    35% {
+      width: 25%;
+    }
+    65% {
+      width: 60%;
+    }
+    75% {
+        width: 90%;
+      }
+    80% {
+      width: 100%;
+    }
+ 
+    100% {
+      width: 100%;
+    }
+  }
+
+    /* This is the logo used on small screens, hidden so it is not on display */
+    .smallScreenLogo{
+      display:none;
+    }
+
+    
+ /* Settings for the div that holds the reset button */
+  .containerReset{
+    margin: 5rem auto;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  /* Settings for the div that holds text and and button related to the random location */
+  #hideRandom{
+    margin: 3rem auto auto auto;
+    width: auto;
+    height: auto;
+    justify-content: center;
+    text-align: center;
+  }
+  .randomText{
+    line-height: 200%;
+  }
+
+
+  .headerClass{
+  /* We first create a flex layout context */
+  display: flex;
+  
+  /* Then we define the flow direction 
+     and if we allow the items to wrap 
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row wrap;
+  
+  /* Then we define how is distributed the remaining space */
+  justify-content: space-around;
+  
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  }
+
+   /* All buttons look the same, for simplicity */
+
+  .button{
+        margin-top: 10px;   
+        box-shadow: 0px 10px 14px -7px #276873;
+        background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+        background-color:#599bb3;
+        border-radius:8px;
+ 
+        cursor:pointer;
+        color:#ffffff;
+        font-weight: 400;
+        padding: 8px 16px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #3d768a;
+ 
+    }
+
+    .button:hover {
+        background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+        background-color:#408c99;
+    }
+    
+    /* Container that holds the photo images */
+  .containerPhotos {
+    width: 90vw;
+    margin: 0 auto;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    text-align: center;
+  }
+
+  
+  /* layout Formatting  */
+  .column {
+    width: auto;
+  }
+
+  .row {
+  display: flex;
+  flex-wrap: wrap;
+  }
+  
+  /* Hides anything in this class */
+  .hidden {
+  display: none;
+  }
+  
+  /* Auto capilises any text in this class */
+  .capitilise {
+  text-transform: capitalize;
+  }
+  
+
+.test{
+  background-color: hotpink;
+}
+  /* Seasonal Background gradients */
+  .winter {
+  background: linear-gradient(to right, #5cddc3, #37529c);
+  background-size: 600% 600%;
+  animation: gradient 7s ease infinite;
+  height: 100vh;
+  }
+  
+  .summer {
+  background-image: linear-gradient(
+      270.2deg,
+      rgb(230, 191, 0) 10.4%,
+      rgb(192, 67, 0) 43.8%,
+      rgba(0, 93, 219, 1) 105.8%
+  );
+  background-size: 400% 400%;
+  animation: gradient 7s ease infinite;
+  height: 100vh;
+  }
+  
+ .spring {
+  background: linear-gradient(to right, #5cddc3, #409c37);
+  background-size: 400% 400%;
+  animation: gradient 7s ease infinite;
+  height: 100vh;
+  }
+  
+  .autumn {
+  background: linear-gradient(to right, #f3904f, #3b4371);
+  background-size: 400% 400%;
+  animation: gradient 7s ease infinite;
+  height: 100vh;
+  }
+
+  /* Moves the background gradients around */
+  @keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+  }
+  
+
+/* Settings for screens that are 1180px (iPad in landscape) or less */
+@media screen and (max-width: 1180px) {
+
+/* making <p> text bigger */
+  p{
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+
+    /* Loading Logo - Spinning one */
+    .logo{
+        height: auto;
+        width: 30vw;
+      }  
+      #loadingImage {
+        height: auto;
+        margin: 2rem auto;
+      }
+
+/* Where users location and weather details go */
+      .containerHeader {
+        width: 90vw;
+        line-height: 350% ;
+      }
+      .containerHeader h3 {
+        font-size: 2rem;
+        font-weight: 500;
+      }
+      .containerHeader h4{
+        font-size: 1.6rem;
+        font-weight: 200;
+      }
+
+  
+  /* User input form */
+    .containerForm {
+      font-size: 2rem;
+      width: fit-content;
+      padding: 1rem;
+    }
+
+      .containerForm input{
+        font-size: 2rem;
+        font-weight: 200;
+      }
+
+      .containerForm p{
+        font-size: 1.75rem;
+        font-weight: 400;
+      }
+
+      .containerLocation {
+        width: 70vw;
+      }
+      
+      .containerWeather {
+        width: 70vw;
+      }
+  }
+
+
+/* header vertical margin */
+  #header{
+    margin: 0 auto;
+  }
+  /* hiding the icon logo */
+  .headerLogo{
+    display: none;   
+  }
+
+   /* Showing the text logo */
+  .smallScreenLogo{
+    display:inherit;
+    width: auto;
+    max-width: 80vw;
+    height: auto;
+    margin: 1rem auto;
+    position: inherit; 
+  }
+

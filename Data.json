@@ -1,0 +1,355 @@
+   {
+    "locations": [
+        {
+            "id": 1,
+            "country": "Cuba",
+            "city": "Havana",
+            "imageName": "havana",
+            "link": "havana",
+            "long": "-82.3666",
+            "lat": "23.1136",
+
+            "prevSlide": "Slide10",
+            "currentSlide":1,
+            "nextSlide":"Slide2",
+
+            "winterStartDate": "2020-12-01",
+            "winterEndDate": "2021-02-28",
+
+            "springStartDate": "2020-12-01",
+            "springEndDate": "2021-02-28",
+
+            "summerStartDate": "2020-12-01",
+            "summerEndDate": "2021-02-28",
+
+            "autumnStartDate": "2020-12-01",
+            "autumnEndDate": "2021-02-28",
+            "city1": true,
+            "city2": false,
+            "city3": false,
+            "city4": false,
+            "city5": false,
+            "city6": false,
+            "city7": false,
+            "city8": false,
+            "city9": false,
+            "city10": false
+
+        },
+        {
+            "id": 2,
+            "country": "Canada",
+            "city": "Vancouver",
+            "imageName": "vancouver",
+            "link": "vancouver",
+            "long": "-123.1207",
+            "lat": "49.2827",
+
+            "prevSlide": "Slide1",
+            "currentSlide":2,
+            "nextSlide":"Slide3",
+                      
+            "winterStartDate": "2020-12-01",
+            "winterEndDate": "2021-02-28",
+
+            "springStartDate": "2020-12-01",
+            "springEndDate": "2021-02-28",
+
+            "summerStartDate": "2020-12-01",
+            "summerEndDate": "2021-02-28",
+
+            "autumnStartDate": "2020-12-01",
+            "autumnEndDate": "2021-02-28",
+            "city1": false,
+            "city2": true,
+            "city3": false,
+            "city4": false,
+            "city5": false,
+            "city6": false,
+            "city7": false,
+            "city8": false,
+            "city9": false,
+            "city10": false
+        },
+        {
+            "id": 3,
+            "country": "Greece",
+            "city": "Santorini",
+            "imageName": "santorini",
+            "link": "santorini",
+            "long": "25.4615",
+            "lat": "36.3932",
+
+            "prevSlide": "Slide2",
+            "currentSlide":3,
+            "nextSlide":"Slide4",
+           
+            "winterStartDate": "2020-12-01",
+            "winterEndDate": "2021-02-28",
+
+            "springStartDate": "2020-12-01",
+            "springEndDate": "2021-02-28",
+
+            "summerStartDate": "2020-12-01",
+            "summerEndDate": "2021-02-28",
+
+            "autumnStartDate": "2020-12-01",
+            "autumnEndDate": "2021-02-28",
+            "city1": false,
+            "city2": false,
+            "city3": true,
+            "city4": false,
+            "city5": false,
+            "city6": false,
+            "city7": false,
+            "city8": false,
+            "city9": false,
+            "city10": false
+        },
+        {
+            "id": 4,
+            "country": "Croatia",
+            "city": "Dubrovnik",
+            "imageName": "dubrovnik",
+            "link": "dubrovnik",
+            "long": "18.0944",
+            "lat": "42.6507",
+
+            "prevSlide": "Slide3",
+            "currentSlide":4,
+            "nextSlide":"Slide5",
+            
+            "winterStartDate": "2020-12-01",
+            "winterEndDate": "2021-02-28",
+
+            "springStartDate": "2020-12-01",
+            "springEndDate": "2021-02-28",
+
+            "summerStartDate": "2020-12-01",
+            "summerEndDate": "2021-02-28",
+
+            "autumnStartDate": "2020-12-01",
+            "autumnEndDate": "2021-02-28",
+            "city1": false,
+            "city2": false,
+            "city3": false,
+            "city4": true,
+            "city5": false,
+            "city6": false,
+            "city7": false,
+            "city8": false,
+            "city9": false,
+            "city10": false
+        },
+        {
+            "id": 5,
+            "country": "Japan",
+            "city": "Tokyo",
+            "imageName": "tokyo",
+            "link": "tokyo",
+            "long": "139.6503",
+            "lat": "35.6762",
+
+            "prevSlide": "Slide4",
+            "currentSlide":5,
+            "nextSlide":"Slide6",
+            
+            "winterStartDate": "2020-12-01",
+            "winterEndDate": "2021-02-28",
+
+            "springStartDate": "2020-12-01",
+            "springEndDate": "2021-02-28",
+
+            "summerStartDate": "2020-12-01",
+            "summerEndDate": "2021-02-28",
+
+            "autumnStartDate": "2020-12-01",
+            "autumnEndDate": "2021-02-28",
+            "city1": false,
+            "city2": false,
+            "city3": false,
+            "city4": false,
+            "city5": true,
+            "city6": false,
+            "city7": false,
+            "city8": false,
+            "city9": false,
+            "city10": false
+        },
+        {
+            "id": 6,
+            "country": "United States of America",
+            "city": "Los Angeles",
+            "imageName": "losangeles",
+            "link": "losangeles",
+            "long": "-118.243683",
+            "lat": "34.052235",
+
+            "prevSlide": "Slide5",
+            "currentSlide":6,
+            "nextSlide":"Slide7",
+            
+            "winterStartDate": "2020-12-01",
+            "winterEndDate": "2021-02-28",
+
+            "springStartDate": "2020-12-01",
+            "springEndDate": "2021-02-28",
+
+            "summerStartDate": "2020-12-01",
+            "summerEndDate": "2021-02-28",
+
+            "autumnStartDate": "2020-12-01",
+            "autumnEndDate": "2021-02-28",
+            "city1": false,
+            "city2": false,
+            "city3": false,
+            "city4": false,
+            "city5": false,
+            "city6": true,
+            "city7": false,
+            "city8": false,
+            "city9": false,
+            "city10": false
+        },
+        {
+            "id": 7,
+            "country": "Indonesia",
+            "city": "Ubud",
+            "imageName": "ubud",
+            "link": "ubud",
+            "long": "115.263298",
+            "lat": "-8.519268",
+
+            "prevSlide": "Slide6",
+            "currentSlide":7,
+            "nextSlide":"Slide8",
+            
+            "winterStartDate": "2020-12-01",
+            "winterEndDate": "2021-02-28",
+
+            "springStartDate": "2020-12-01",
+            "springEndDate": "2021-02-28",
+
+            "summerStartDate": "2020-12-01",
+            "summerEndDate": "2021-02-28",
+
+            "autumnStartDate": "2020-12-01",
+            "autumnEndDate": "2021-02-28",
+            "city1": false,
+            "city2": false,
+            "city3": false,
+            "city4": false,
+            "city5": false,
+            "city6": false,
+            "city7": true,
+            "city8": false,
+            "city9": false,
+            "city10": false
+        },
+        {
+            "id": 8,
+            "country": "United States of America",
+            "city": "New Orleans",
+            "imageName": "neworleans",
+            "link": "neworleans",
+            "long": "-90.071533",
+            "lat": "29.951065",
+
+            "prevSlide": "Slide7",
+            "currentSlide":8,
+            "nextSlide":"Slide9",
+            
+            "winterStartDate": "2020-12-01",
+            "winterEndDate": "2021-02-28",
+
+            "springStartDate": "2020-12-01",
+            "springEndDate": "2021-02-28",
+
+            "summerStartDate": "2020-12-01",
+            "summerEndDate": "2021-02-28",
+
+            "autumnStartDate": "2020-12-01",
+            "autumnEndDate": "2021-02-28",
+            "city1": false,
+            "city2": false,
+            "city3": false,
+            "city4": false,
+            "city5": false,
+            "city6": false,
+            "city7": false,
+            "city8": true,
+            "city9": false,
+            "city10": false
+        },
+        {
+            "id": 9,
+            "country": "France",
+            "city": "Paris",
+            "imageName": "paris",
+            "link": "paris",
+            "long": "2.3522",
+            "lat": "48.866",
+
+            "prevSlide": "Slide8",
+            "currentSlide":9,
+            "nextSlide":"Slide10",
+            
+            "winterStartDate": "2020-12-01",
+            "winterEndDate": "2021-02-28",
+
+            "springStartDate": "2020-12-01",
+            "springEndDate": "2021-02-28",
+
+            "summerStartDate": "2020-12-01",
+            "summerEndDate": "2021-02-28",
+
+            "autumnStartDate": "2020-12-01",
+            "autumnEndDate": "2021-02-28",
+            "city1": false,
+            "city2": false,
+            "city3": false,
+            "city4": false,
+            "city5": false,
+            "city6": false,
+            "city7": false,
+            "city8": false,
+            "city9": true,
+            "city10": false
+        },
+        {
+            "id": 10,
+            "country": "Morroco",
+            "city": "Marrakesh",
+            "imageName": "marrakesh",
+            "link": "marrakesh",
+            "long": "-7.992047",
+            "lat": "31.628674",
+
+            "prevSlide": "Slide9",
+            "currentSlide":10,
+            "nextSlide":"Slide1",
+
+            "winterStartDate": "2020-12-01",
+            "winterEndDate": "2021-02-28",
+
+            "springStartDate": "2020-12-01",
+            "springEndDate": "2021-02-28",
+
+            "summerStartDate": "2020-12-01",
+            "summerEndDate": "2021-02-28",
+
+            "autumnStartDate": "2020-12-01",
+            "autumnEndDate": "2021-02-28",
+            "city1": false,
+            "city2": false,
+            "city3": false,
+            "city4": false,
+            "city5": false,
+            "city6": false,
+            "city7": false,
+            "city8": false,
+            "city9": false,
+            "city10": true
+        }
+  ]
+}
