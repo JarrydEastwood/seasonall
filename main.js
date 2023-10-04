@@ -15,25 +15,6 @@ let imageSrc =
 
 var reset = false;
 
-var randomLocations = [
-    "Ubud Indonesia",
-    "New Orleans USA",
-    "Marrakesh Morocco",
-    "Paris France",
-    "Cape Town South Africa",
-    "Dubrovnik Croatia",
-    "Tokyo Japan",
-    "Vancouver Canada",
-    "Los Angeles USA",
-    "Vernazza Italy",
-    "Buenos Aires Argentina",
-    "London England",
-    "Jaipur India",
-    "Havana Cuba",
-    "Christchurch New Zealand",
-    "Hydra Greece",
-  ];
-
   // Random Month Array
   var month = [
     "january",
@@ -107,8 +88,7 @@ var randomLocations = [
 
   function getData() {
 
-  if (document.getElementById("infoHider").classList.contains('hidden')) {
-    console.log("Empty container");
+  if (document.getElementById("dataCard").classList.contains('hidden')) {
 
       $(document).ready(function () {
       //Calling function to find hemisphere of travel location
@@ -165,49 +145,38 @@ var randomLocations = [
         var season = $("<p>").html("Season: " + travelSeason);
   
         // Appending the HTML variables to relevant container using the class
-        $(".containerLocation").append(
-          city,
-          country,
-          long,
-          lat,
-          hemi,
-          month,
-          season
-        );   
+        // $(".containerLocation").append(
+        //   city,
+        //   country,
+        //   long,
+        //   lat,
+        //   hemi,
+        //   month,
+        //   season
+        // );   
 
+        document.getElementById("location").append(storeCity);
+        document.getElementById("season").append(travelSeason);
 
+        // 
         // Call function to get the Weather data.
         getWeather()
       });
     });
     }
       else {
-        console.log("this is the else trigger, there should be stuff in the infoHider div");
         $(document).ready(function () {
-         document.getElementById("infoHider").classList.add("hidden");
-         document.getElementById("idLocation").removeChild(document.getElementById("idLocation").lastElementChild);
-         document.getElementById("idLocation").removeChild(document.getElementById("idLocation").lastElementChild);
-         document.getElementById("idLocation").removeChild(document.getElementById("idLocation").lastElementChild);
-         document.getElementById("idLocation").removeChild(document.getElementById("idLocation").lastElementChild);
-         document.getElementById("idLocation").removeChild(document.getElementById("idLocation").lastElementChild);
-         document.getElementById("idLocation").removeChild(document.getElementById("idLocation").lastElementChild);
-         document.getElementById("idLocation").removeChild(document.getElementById("idLocation").lastElementChild);
+         document.getElementById("dataCard").classList.add("hidden");
 
-         document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-         document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-         document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-         document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-         document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-         document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-         document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-         
+         document.getElementById("location").innerHTML = "";
+         cardReset();
          getData();
         });
       };
   }
 
 function seasonSpring() {
-  if (document.getElementById("infoHider").classList.contains('hidden')) {
+  if (document.getElementById("dataCard").classList.contains('hidden')) {
     $(document).ready(function () {
     document.getElementById("content").classList.remove("winter");
     document.getElementById("content").classList.remove("summer");
@@ -221,25 +190,19 @@ else {
     document.getElementById("content").classList.remove("summer");
     document.getElementById("content").classList.remove("autumn");
     document.getElementById("content").classList.add("spring");
-    // Need to reset to weather data and call new season here
-    document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-    document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-    document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-    document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-    document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-    document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-    document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
+
+    // Need to reset to data and call new season here
+    cardReset();
     travelSeason = "Spring";
-    var season = $("<p>").html("Season: " + travelSeason);
-    document.getElementById("idLocation").removeChild(document.getElementById("idLocation").lastElementChild);
-    $(".containerLocation").append(season);
+    document.getElementById("season").append(travelSeason);
+
     getWeather();
   })}
 }
 
 
 function seasonSummer() {
-  if (document.getElementById("infoHider").classList.contains('hidden')) {
+  if (document.getElementById("dataCard").classList.contains('hidden')) {
     $(document).ready(function () {
     document.getElementById("content").classList.remove("winter");
     document.getElementById("content").classList.remove("spring");
@@ -254,23 +217,15 @@ function seasonSummer() {
       document.getElementById("content").classList.remove("autumn");
       document.getElementById("content").classList.add("summer");
       // Need to reset to weather data and call new season here
-      document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-      document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-      document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-      document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-      document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-      document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-      document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
+      cardReset();
       travelSeason = "Summer";
-      var season = $("<p>").html("Season: " + travelSeason);
-      document.getElementById("idLocation").removeChild(document.getElementById("idLocation").lastElementChild);
-      $(".containerLocation").append(season);
+      document.getElementById("season").append(travelSeason);
       getWeather();
     })}
 }
 
 function seasonAutumn() {
-  if (document.getElementById("infoHider").classList.contains('hidden')) {
+  if (document.getElementById("dataCard").classList.contains('hidden')) {
     $(document).ready(function () {
       document.getElementById("content").classList.remove("winter");
       document.getElementById("content").classList.remove("spring");
@@ -284,24 +239,16 @@ function seasonAutumn() {
         document.getElementById("content").classList.remove("spring");
         document.getElementById("content").classList.remove("summer");
         document.getElementById("content").classList.add("autumn");
-    // Need to reset to weather data and call new season here
-        document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-        document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-        document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-        document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-        document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-        document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-        document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
+      // Need to reset to weather data and call new season here
+        cardReset();
         travelSeason = "Autumn";
-        var season = $("<p>").html("Season: " + travelSeason);
-        document.getElementById("idLocation").removeChild(document.getElementById("idLocation").lastElementChild);
-        $(".containerLocation").append(season);
+        document.getElementById("season").append(travelSeason);
         getWeather();
       })}
 }
 
 function seasonWinter() {
-  if (document.getElementById("infoHider").classList.contains('hidden')) {
+  if (document.getElementById("dataCard").classList.contains('hidden')) {
   $(document).ready(function () {
   document.getElementById("content").classList.remove("spring");
   document.getElementById("content").classList.remove("summer");
@@ -316,25 +263,23 @@ function seasonWinter() {
     document.getElementById("content").classList.remove("autumn");
     document.getElementById("content").classList.add("winter");
   // Need to reset to weather data and call new season here
-    document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-    document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-    document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-    document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-    document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-    document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
-    document.getElementById("idWeather").removeChild(document.getElementById("idWeather").lastElementChild);
+    cardReset();
     travelSeason = "Winter";
-    var season = $("<p>").html("Season: " + travelSeason);
-    document.getElementById("idLocation").removeChild(document.getElementById("idLocation").lastElementChild);
-    $(".containerLocation").append(season);
+    document.getElementById("season").append(travelSeason);
     getWeather();
+
     })}
 }
 
-function showCard() {
-  document.getElementById("dataCard").classList.toggle("hidden");
-  }
-
+function cardReset(){
+  document.getElementById("season").innerHTML = "";
+  document.getElementById("sunrise").innerHTML = "";
+  document.getElementById("sunset").innerHTML = "";
+  document.getElementById("maxTemp").innerHTML = "";
+  document.getElementById("minTemp").innerHTML = "";
+  document.getElementById("rainfall").innerHTML = "";
+  document.getElementById("snowfall").innerHTML = "";
+}
 
   function removeActive() {
     document.getElementById("havanaBtn").classList.remove('bg-gray-700');
@@ -350,9 +295,9 @@ function showCard() {
   }
 
 function destinationHavana() {
-removeActive();
-document.getElementById("havanaBtn").classList.add('bg-gray-700');
-document.getElementById("travelLocation").value = 'Havana Cuba';
+  removeActive();
+  document.getElementById("havanaBtn").classList.add('bg-gray-700');
+  document.getElementById("travelLocation").value = 'Havana Cuba';
   document.getElementById("travelImage").src = imageSrc[0];
   getRandom();
   getData();
@@ -437,8 +382,7 @@ function destinationMarrakesh() {
   getRandom();
   getData();
 }
-    
-
+  
 function getRandom() {
   console.log("getRandom");
   const randomMonth = Math.floor(Math.random() * month.length);
@@ -517,48 +461,48 @@ function getRandom() {
         var storeMinTemp = avgMinTemp.toFixed(1);
         var storeRainfall = avgRainfall.toFixed(2);
         var storeSnowfall = avgSnowfall.toFixed(2);
-  
-        // Getting content on the page
-          // Creating variables with HTML Tags to display the data on page. - "&#8451" is symbol for degrees celcius
-          var maxTemp = $("<h3>").html("Max Temp: " + storeMaxTemp + "&#8451");
-          var minTemp = $("<h3>").html("Min Temp: " + storeMinTemp + "&#8451");
-          var sunrise = $('<p class="topSpace">').html("Sunrise: " + storeSunrise);
-          var sunset = $("<p>").html("Sunset: " + storeSunset);
-          var rainfall = $("<p>").html("Rainfall: " + storeRainfall + "mm");
-          var snowfall = $("<p>").html("Snowfall: " + storeSnowfall + "mm");
-          var timezone = $("<p>").html("Timezone: " + timezone);
-  
-          // Appending the HTML variables to the relevant div via the class name
-          $(".containerWeather").append(
-            maxTemp,
-            minTemp,
-            sunrise,
-            sunset,
-            rainfall,
-            snowfall,
-            timezone
-          );
+
+        if (storeRainfall > 2.00) {
+          document.getElementById("rain").classList.toggle("hidden");
+        }
+    
             
+        document.getElementById("maxTemp").append((storeMaxTemp)+ "");
+        document.getElementById("minTemp").append((storeMinTemp)+ "");
+        document.getElementById("sunrise").append(storeSunrise);
+        document.getElementById("sunset").append(storeSunset);
+        document.getElementById("rainfall").append((storeRainfall) + " mm");
+        document.getElementById("snowfall").append((storeSnowfall) + " mm");
 
-
-        document.getElementById("infoHider").classList.remove("hidden");
+        document.getElementById("dataCard").classList.remove("hidden");
         document.getElementById("seasonButtons").classList.remove("invisible");
-
       });
     });
   }
   
+function createRaindrops() {
+  const rainContainer = document.getElementById('rain');
+  const dropCount = 100;
+
+  for (let i = 0; i < dropCount; i++) {
+    const drop = document.createElement('div');
+    drop.className = 'drop';
+    drop.style.left = `${Math.random() * 100}%`;
+    drop.style.animationDelay = `${Math.random()}s`;
+    rainContainer.appendChild(drop);
+  }
+}
+
+// Запускаємо створення крапель дощу під час завантаження сторінки
+window.addEventListener('load', createRaindrops);
   
   //Finds the travel locations hempishere which is used in Seasonal variables later.
   function findHemisphere() {
-    console.log("findHemisphere test");
   // Checks if the latitude of the is above the Equator and sets the variable "hemisphere" to North if it is or South if it is below. 
   if (travelLat > 0) {
     (hemisphere = "North"), findSeasonNorth();
-    console.log("Not South");
   } else {
     (hemisphere = "South"), findSeasonSouth();
-    console.log("Not north");
   }
   }
   

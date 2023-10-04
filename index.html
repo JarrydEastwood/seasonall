@@ -56,137 +56,118 @@
 
       
       <div id="seasonButtons" class="invisible flex flex-row flex-wrap mt-4 mx-auto bg-white items-center justify-center">
-        <a id="springBtn" class="bg-emerald-500 hover:bg-emerald-400 text-white py-1 mx-2 px-2 border-b-4 border-emerald-700 hover:border-emerald-500 rounded"
+       
+        <a id="autumnBtn" class="text-white bg-gradient-to-br from-purple-600 to-orange-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-orange-300  font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+        onclick="seasonAutumn()">Autumn</a>
+
+        <a id="summerBtn" class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300  font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+        onclick="seasonWinter()">Winter</a>
+
+        <a id="springBtn" class="text-white bg-gradient-to-r from-green-700 to-lime-500 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
         onclick="seasonSpring()">Spring</a>
 
-       <a id="summerBtn" class="bg-red-500 hover:bg-red-400 text-white py-1 mx-2 px-2 border-b-4 border-red-700 hover:border-red-500 rounded"
+       <a id="summerBtn" class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200  font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
         onclick="seasonSummer()">Summer</a>
 
-       
-        <button onclick="seasonWinter()" class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 ">
-          <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-opacity-0">
-            Winter
-          </span>
-        </button>
-
-       <a id="autumnBtn" class="bg-orange-500 hover:bg-orange-400 text-white py-1 mx-2 px-2 border-b-4 border-orange-700 hover:border-orange-500 rounded"
-        onclick="seasonAutumn()">Autumn</a>
      </div>
     </div>
 
-    <div id="content" class="w-[100vw] h-[100vh] fixed bottom-0">
-     
-      <!-- hiding the storage of the data on the screen because I can't figure out how to do this better -->
-        <div class="hidden">
-        <input
-              type="text"
-              name="Location"
-              id="travelLocation"
-              placeholder="Hydra Greece"
-              onkeyup="locationLettersOnly()"
-            /><br /><br />
-            Travel month:
-            <input
-              class="capitilise"
-              type="text"
-              name="Month"
-              id="travelMonth"
-              placeholder="July"
-              onkeyup="monthLettersOnly()"
-            /><br /><br />
-        </div>   
-
-        <!-- Making this into one card -->
-        <div id="infoHider" class="infoWrapper row hidden">
-          <div id="idLocation" class="containerLocation column">
-            <h3 class="title">Location</h3>
-            <!-- Location data from location API goes here via getData()-->
-          </div>
-
-          <div id="idWeather" class="containerWeather column">
-            <h3 class="title">Average weather</h3>
-            <!-- Weather data from Weather API goes here via getWeather()-->
-          </div>
-        </div>
-
-   <!-- New single card - just need to connnect to API data   -->
-
-    <button class="top-64 left-32 absolute z-50 text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-     onclick="showCard()">Show new card</button>
-
-
-
-
-  <div id="dataCard" class="hidden z-50 bg-white border border-gray-200 justify-center items-center
-     rounded-lg shadow sm:py-2 mx-auto max-h-[32rem] top-[35vh] left-[25vw] lg:top-[30vh] lg:left-[40vw] w-[50vw] lg:w-[20vw] 
-     absolute bg-white flex">    
-    <div class=" ">
-    <h5 class="mb-4 text-xl text-center font-medium text-black">Location in Season</h5>
-  
-    <ul role="list" class="space-y-3">
-    
-        <li class="flex space-x-3 items-center justify-left ml-4 pl-4">
-        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-10 h-10 text-blue-600 "  aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-        <path d="M7.646 1.146a.5.5 0 0 1 .708 0l1.5 1.5a.5.5 0 0 1-.708.708L8.5 2.707V4.5a.5.5 0 0 1-1 0V2.707l-.646.647a.5.5 0 1 1-.708-.708l1.5-1.5zM2.343 4.343a.5.5 0 0 1 .707 0l1.414 1.414a.5.5 0 0 1-.707.707L2.343 5.05a.5.5 0 0 1 0-.707zm11.314 0a.5.5 0 0 1 0 .707l-1.414 1.414a.5.5 0 1 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zM11.709 11.5a4 4 0 1 0-7.418 0H.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1h-3.79zM0 10a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 0 10zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
-        </svg>
-            <span class="text-black">Sunrise</span>
-        </li>
-
-        <li class="flex space-x-3 items-center justify-left ml-4 pl-4">
-        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-10 h-10 text-blue-600 "  aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-        <path d="M7.646 4.854a.5.5 0 0 0 .708 0l1.5-1.5a.5.5 0 0 0-.708-.708l-.646.647V1.5a.5.5 0 0 0-1 0v1.793l-.646-.647a.5.5 0 1 0-.708.708l1.5 1.5zm-5.303-.51a.5.5 0 0 1 .707 0l1.414 1.413a.5.5 0 0 1-.707.707L2.343 5.05a.5.5 0 0 1 0-.707zm11.314 0a.5.5 0 0 1 0 .706l-1.414 1.414a.5.5 0 1 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zM11.709 11.5a4 4 0 1 0-7.418 0H.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1h-3.79zM0 10a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 0 10zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>        
-        </svg>
-            <span class="text-black">Sunset</span>
-        </li>
-
-        <li class="flex space-x-3 items-center justify-left ml-4 pl-4">
-        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-10 h-10 text-blue-600 "  aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-        <path d="M5 12.5a1.5 1.5 0 1 1-2-1.415V2.5a.5.5 0 0 1 1 0v8.585A1.5 1.5 0 0 1 5 12.5z"/> <path d="M1 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0V2.5zM3.5 1A1.5 1.5 0 0 0 2 2.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0L5 10.486V2.5A1.5 1.5 0 0 0 3.5 1zm5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0v-1a.5.5 0 0 1 .5-.5zm4.243 1.757a.5.5 0 0 1 0 .707l-.707.708a.5.5 0 1 1-.708-.708l.708-.707a.5.5 0 0 1 .707 0zM8 5.5a.5.5 0 0 1 .5-.5 3 3 0 1 1 0 6 .5.5 0 0 1 0-1 2 2 0 0 0 0-4 .5.5 0 0 1-.5-.5zM12.5 8a.5.5 0 0 1 .5-.5h1a.5.5 0 1 1 0 1h-1a.5.5 0 0 1-.5-.5zm-1.172 2.828a.5.5 0 0 1 .708 0l.707.708a.5.5 0 0 1-.707.707l-.708-.707a.5.5 0 0 1 0-.708zM8.5 12a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0v-1a.5.5 0 0 1 .5-.5z"/>
-        </svg>
-            <span class="text-black">MaxTemp</span>
-        </li>
-
-        <li class="flex space-x-3 items-center justify-left ml-4 pl-4">
-        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-10 h-10 text-blue-600 "  aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-        <path d="M5 12.5a1.5 1.5 0 1 1-2-1.415V9.5a.5.5 0 0 1 1 0v1.585A1.5 1.5 0 0 1 5 12.5z"/> <path d="M1 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0V2.5zM3.5 1A1.5 1.5 0 0 0 2 2.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0L5 10.486V2.5A1.5 1.5 0 0 0 3.5 1zm5 1a.5.5 0 0 1 .5.5v1.293l.646-.647a.5.5 0 0 1 .708.708L9 5.207v1.927l1.669-.963.495-1.85a.5.5 0 1 1 .966.26l-.237.882 1.12-.646a.5.5 0 0 1 .5.866l-1.12.646.884.237a.5.5 0 1 1-.26.966l-1.848-.495L9.5 8l1.669.963 1.849-.495a.5.5 0 1 1 .258.966l-.883.237 1.12.646a.5.5 0 0 1-.5.866l-1.12-.646.237.883a.5.5 0 1 1-.966.258L10.67 9.83 9 8.866v1.927l1.354 1.353a.5.5 0 0 1-.708.708L9 12.207V13.5a.5.5 0 0 1-1 0v-11a.5.5 0 0 1 .5-.5z"/>
-        </svg>
-            <span class="text-black">MinTemp</span>
-        </li>
-
-        <li class="flex space-x-3 items-center justify-left ml-4 pl-4">
-        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-10 h-10 text-blue-600 "  aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-        <path d="M4.158 12.025a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 1 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm3 0a.5.5 0 0 1 .316.633l-1 3a.5.5 0 1 1-.948-.316l1-3a.5.5 0 0 1 .632-.317zm3 0a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 1 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm3 0a.5.5 0 0 1 .316.633l-1 3a.5.5 0 1 1-.948-.316l1-3a.5.5 0 0 1 .632-.317zm.247-6.998a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 11H13a3 3 0 0 0 .405-5.973z"/>
-        </svg>
-            <span class="text-black">Rainfall</span>
-        </li>
-
-        <li class="flex space-x-3 items-center justify-left ml-4 pl-4">
-        <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-10 h-10 text-blue-600 "  aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-        <path d="M2.625 11.5a.25.25 0 0 1 .25.25v.57l.501-.287a.25.25 0 0 1 .248.434l-.495.283.495.283a.25.25 0 0 1-.248.434l-.501-.286v.569a.25.25 0 1 1-.5 0v-.57l-.501.287a.25.25 0 0 1-.248-.434l.495-.283-.495-.283a.25.25 0 0 1 .248-.434l.501.286v-.569a.25.25 0 0 1 .25-.25zm2.75 2a.25.25 0 0 1 .25.25v.57l.5-.287a.25.25 0 0 1 .249.434l-.495.283.495.283a.25.25 0 0 1-.248.434l-.501-.286v.569a.25.25 0 1 1-.5 0v-.57l-.501.287a.25.25 0 0 1-.248-.434l.495-.283-.495-.283a.25.25 0 0 1 .248-.434l.501.286v-.569a.25.25 0 0 1 .25-.25zm5.5 0a.25.25 0 0 1 .25.25v.57l.5-.287a.25.25 0 0 1 .249.434l-.495.283.495.283a.25.25 0 0 1-.248.434l-.501-.286v.569a.25.25 0 0 1-.5 0v-.57l-.501.287a.25.25 0 0 1-.248-.434l.495-.283-.495-.283a.25.25 0 0 1 .248-.434l.501.286v-.569a.25.25 0 0 1 .25-.25zm-2.75-2a.25.25 0 0 1 .25.25v.57l.5-.287a.25.25 0 0 1 .249.434l-.495.283.495.283a.25.25 0 0 1-.248.434l-.501-.286v.569a.25.25 0 1 1-.5 0v-.57l-.501.287a.25.25 0 0 1-.248-.434l.495-.283-.495-.283a.25.25 0 0 1 .248-.434l.501.286v-.569a.25.25 0 0 1 .25-.25zm5.5 0a.25.25 0 0 1 .25.25v.57l.5-.287a.25.25 0 0 1 .249.434l-.495.283.495.283a.25.25 0 0 1-.248.434l-.501-.286v.569a.25.25 0 0 1-.5 0v-.57l-.501.287a.25.25 0 1 1-.248-.434l.495-.283-.495-.283a.25.25 0 0 1 .248-.434l.501.286v-.569a.25.25 0 0 1 .25-.25zm-.22-7.223a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 10.25H13a3 3 0 0 0 .405-5.973z"/>
-        </svg>
-            <span class="text-black">Snowfall</span>
-        </li>
-    
-
-        </ul>
-    </div>
-  </div>
-
+      <div id="content" class="w-[100vw] h-[100vh] fixed bottom-0">
       
-        <div id="landingScreen" class="block w-[70vw] h-[90vh] fixed bottom-0 left-[15vw]">
-          <h1 class="text-5xl font-bold text-gray-700 text-center mt-20 mb-10">
-            Pick a destination to get started
-          </h1>
-          <div class="flex items-center my-auto justify-center h-[60vh]">
-            <image id="logo" class="w-[15vw]" src="assets/images/logo.png" alt="Seasonall" />
-          </div>
-        </div>
-        
-        <div id="leftClippingMask" class="z-40 w-[15vw] absolute bottom-0 left-0 h-full bg-white"></div>
-        <div id="rightClippingMask" class="z-40 w-[15vw] absolute bottom-0 right-0 h-full bg-white"></div>
-        <image id="travelImage" class="hidden travelImageClass" src="assets/images/havana.png" alt="Seasonall" />
+        <!-- hiding the storage of the data on the screen because I can't figure out how to do this better -->
+          <div class="hidden">
+          <input
+                type="text"
+                name="Location"
+                id="travelLocation"
+                placeholder="Hydra Greece"
+                onkeyup="locationLettersOnly()"
+              /><br /><br />
+              Travel month:
+              <input
+                class="capitilise"
+                type="text"
+                name="Month"
+                id="travelMonth"
+                placeholder="July"
+                onkeyup="monthLettersOnly()"
+              /><br /><br />
+          </div>   
 
+
+    <div id="dataCard" class="hidden z-50 bg-white border border-gray-200 justify-center items-center
+      rounded-lg shadow sm:py-2 mx-auto max-h-[32rem] top-[35vh] left-[25vw] lg:top-[30vh] lg:left-[40vw] w-[50vw] lg:w-[20vw] 
+      absolute bg-white flex">    
+      <div class=" ">
+      <h5 class="mb-4 text-xl text-center font-medium text-black"><span id="location"></span> in <span id="season"></span></h5>
+    
+      <ul role="list" class="space-y-3">
+      
+          <li class="flex space-x-3 items-center justify-left ml-4 pl-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-10 h-10 text-blue-600 "  aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M7.646 1.146a.5.5 0 0 1 .708 0l1.5 1.5a.5.5 0 0 1-.708.708L8.5 2.707V4.5a.5.5 0 0 1-1 0V2.707l-.646.647a.5.5 0 1 1-.708-.708l1.5-1.5zM2.343 4.343a.5.5 0 0 1 .707 0l1.414 1.414a.5.5 0 0 1-.707.707L2.343 5.05a.5.5 0 0 1 0-.707zm11.314 0a.5.5 0 0 1 0 .707l-1.414 1.414a.5.5 0 1 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zM11.709 11.5a4 4 0 1 0-7.418 0H.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1h-3.79zM0 10a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 0 10zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
+          </svg>
+              <span id="sunrise" class="pl-2 text-black"></span>
+          </li>
+
+          <li class="flex space-x-3 items-center justify-left ml-4 pl-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-10 h-10 text-blue-600 "  aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M7.646 4.854a.5.5 0 0 0 .708 0l1.5-1.5a.5.5 0 0 0-.708-.708l-.646.647V1.5a.5.5 0 0 0-1 0v1.793l-.646-.647a.5.5 0 1 0-.708.708l1.5 1.5zm-5.303-.51a.5.5 0 0 1 .707 0l1.414 1.413a.5.5 0 0 1-.707.707L2.343 5.05a.5.5 0 0 1 0-.707zm11.314 0a.5.5 0 0 1 0 .706l-1.414 1.414a.5.5 0 1 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zM11.709 11.5a4 4 0 1 0-7.418 0H.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1h-3.79zM0 10a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 0 10zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>        
+          </svg>
+              <span id="sunset" class=" pl-2 text-black"></span>
+          </li>
+
+          <li class="flex space-x-3 items-center justify-left ml-4 pl-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-10 h-10 text-blue-600 "  aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M5 12.5a1.5 1.5 0 1 1-2-1.415V2.5a.5.5 0 0 1 1 0v8.585A1.5 1.5 0 0 1 5 12.5z"/> <path d="M1 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0V2.5zM3.5 1A1.5 1.5 0 0 0 2 2.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0L5 10.486V2.5A1.5 1.5 0 0 0 3.5 1zm5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0v-1a.5.5 0 0 1 .5-.5zm4.243 1.757a.5.5 0 0 1 0 .707l-.707.708a.5.5 0 1 1-.708-.708l.708-.707a.5.5 0 0 1 .707 0zM8 5.5a.5.5 0 0 1 .5-.5 3 3 0 1 1 0 6 .5.5 0 0 1 0-1 2 2 0 0 0 0-4 .5.5 0 0 1-.5-.5zM12.5 8a.5.5 0 0 1 .5-.5h1a.5.5 0 1 1 0 1h-1a.5.5 0 0 1-.5-.5zm-1.172 2.828a.5.5 0 0 1 .708 0l.707.708a.5.5 0 0 1-.707.707l-.708-.707a.5.5 0 0 1 0-.708zM8.5 12a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0v-1a.5.5 0 0 1 .5-.5z"/>
+          </svg>
+              <span id="maxTemp" class="text-black"></span>
+          </li>
+
+          <li class="flex space-x-3 items-center justify-left ml-4 pl-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-10 h-10 text-blue-600 "  aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M5 12.5a1.5 1.5 0 1 1-2-1.415V9.5a.5.5 0 0 1 1 0v1.585A1.5 1.5 0 0 1 5 12.5z"/> <path d="M1 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0V2.5zM3.5 1A1.5 1.5 0 0 0 2 2.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0L5 10.486V2.5A1.5 1.5 0 0 0 3.5 1zm5 1a.5.5 0 0 1 .5.5v1.293l.646-.647a.5.5 0 0 1 .708.708L9 5.207v1.927l1.669-.963.495-1.85a.5.5 0 1 1 .966.26l-.237.882 1.12-.646a.5.5 0 0 1 .5.866l-1.12.646.884.237a.5.5 0 1 1-.26.966l-1.848-.495L9.5 8l1.669.963 1.849-.495a.5.5 0 1 1 .258.966l-.883.237 1.12.646a.5.5 0 0 1-.5.866l-1.12-.646.237.883a.5.5 0 1 1-.966.258L10.67 9.83 9 8.866v1.927l1.354 1.353a.5.5 0 0 1-.708.708L9 12.207V13.5a.5.5 0 0 1-1 0v-11a.5.5 0 0 1 .5-.5z"/>
+          </svg>
+              <span id="minTemp" class="text-black"></span>
+          </li>
+
+          <li class="flex space-x-3 items-center justify-left ml-4 pl-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-10 h-10 text-blue-600 "  aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M4.158 12.025a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 1 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm3 0a.5.5 0 0 1 .316.633l-1 3a.5.5 0 1 1-.948-.316l1-3a.5.5 0 0 1 .632-.317zm3 0a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 1 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm3 0a.5.5 0 0 1 .316.633l-1 3a.5.5 0 1 1-.948-.316l1-3a.5.5 0 0 1 .632-.317zm.247-6.998a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 11H13a3 3 0 0 0 .405-5.973z"/>
+          </svg>
+              <span id="rainfall" class="text-black"></span>
+          </li>
+
+          <li class="flex space-x-3 items-center justify-left ml-4 pl-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-10 h-10 text-blue-600 "  aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M2.625 11.5a.25.25 0 0 1 .25.25v.57l.501-.287a.25.25 0 0 1 .248.434l-.495.283.495.283a.25.25 0 0 1-.248.434l-.501-.286v.569a.25.25 0 1 1-.5 0v-.57l-.501.287a.25.25 0 0 1-.248-.434l.495-.283-.495-.283a.25.25 0 0 1 .248-.434l.501.286v-.569a.25.25 0 0 1 .25-.25zm2.75 2a.25.25 0 0 1 .25.25v.57l.5-.287a.25.25 0 0 1 .249.434l-.495.283.495.283a.25.25 0 0 1-.248.434l-.501-.286v.569a.25.25 0 1 1-.5 0v-.57l-.501.287a.25.25 0 0 1-.248-.434l.495-.283-.495-.283a.25.25 0 0 1 .248-.434l.501.286v-.569a.25.25 0 0 1 .25-.25zm5.5 0a.25.25 0 0 1 .25.25v.57l.5-.287a.25.25 0 0 1 .249.434l-.495.283.495.283a.25.25 0 0 1-.248.434l-.501-.286v.569a.25.25 0 0 1-.5 0v-.57l-.501.287a.25.25 0 0 1-.248-.434l.495-.283-.495-.283a.25.25 0 0 1 .248-.434l.501.286v-.569a.25.25 0 0 1 .25-.25zm-2.75-2a.25.25 0 0 1 .25.25v.57l.5-.287a.25.25 0 0 1 .249.434l-.495.283.495.283a.25.25 0 0 1-.248.434l-.501-.286v.569a.25.25 0 1 1-.5 0v-.57l-.501.287a.25.25 0 0 1-.248-.434l.495-.283-.495-.283a.25.25 0 0 1 .248-.434l.501.286v-.569a.25.25 0 0 1 .25-.25zm5.5 0a.25.25 0 0 1 .25.25v.57l.5-.287a.25.25 0 0 1 .249.434l-.495.283.495.283a.25.25 0 0 1-.248.434l-.501-.286v.569a.25.25 0 0 1-.5 0v-.57l-.501.287a.25.25 0 1 1-.248-.434l.495-.283-.495-.283a.25.25 0 0 1 .248-.434l.501.286v-.569a.25.25 0 0 1 .25-.25zm-.22-7.223a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 10.25H13a3 3 0 0 0 .405-5.973z"/>
+          </svg>
+              <span id="snowfall" class="text-black"></span>
+          </li>
+      
+
+          </ul>
       </div>
+    </div>
+
+        
+          <div id="landingScreen" class="block w-[70vw] h-[90vh] fixed bottom-0 left-[15vw]">
+            <h1 class="text-5xl font-bold text-gray-700 text-center mt-20 mb-10">
+              Pick a destination to get started
+            </h1>
+            <div class="flex items-center my-auto justify-center h-[60vh]">
+              <image id="logo" class="w-[15vw]" src="assets/images/logo.png" alt="Seasonall" />
+            </div>
+          </div>
+          
+          <div id="leftClippingMask" class="z-40 w-[15vw] absolute bottom-0 left-0 h-full bg-white"></div>
+          <div id="rightClippingMask" class="z-40 w-[15vw] absolute bottom-0 right-0 h-full bg-white"></div>
+          <image id="travelImage" class="hidden travelImageClass" src="assets/images/havana.png" alt="Seasonall" />
+   
+      <div id="rain" class=" z-20 absolute hidden w-[100vw] h-[100vh]  bottom-0">
+      </div>
+
+  </div>
     <script src="main.js"></script>
   </body>
 </html>
