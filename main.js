@@ -399,6 +399,7 @@ function getRandom() {
   // Function calculates averages of Max Temp, Min Temp, Rainfall, Snowfall, locations timezone and gets the 45th day's Sunrise and Sunset time.
   function getWeather() { 
     document.getElementById("rain").classList.add("hidden");
+    document.getElementById("heavyRain").classList.add("hidden");
   
   
     // Calls functions to get seasonal start and end dates for weatherData 
@@ -463,8 +464,11 @@ function getRandom() {
         var storeRainfall = avgRainfall.toFixed(2);
         var storeSnowfall = avgSnowfall.toFixed(2);
 
-        if (storeRainfall > 2.00) {
+        if (storeRainfall > 2.00 && storeRainfall < 8.00) {
           document.getElementById("rain").classList.remove("hidden");
+        } 
+        if (storeRainfall >= 8.00) {
+          document.getElementById("heavyRain").classList.remove("hidden");
         } 
             
         document.getElementById("maxTemp").append((storeMaxTemp)+ "");
@@ -493,7 +497,21 @@ function createRaindrops() {
   }
 }
 
+function createHeavyRaindrops() {
+  const rainContainer = document.getElementById('heavyRain');
+  const dropCount = 500;
+
+  for (let i = 0; i < dropCount; i++) {
+    const heavyDrop = document.createElement('div');
+    heavyDrop.className = 'drop';
+    heavyDrop.style.left = `${Math.random() * 100}%`;
+    heavyDrop.style.animationDelay = `${Math.random()}s`;
+    rainContainer.appendChild(heavyDrop);
+  }
+}
+
 window.addEventListener('load', createRaindrops);
+window.addEventListener('load', createHeavyRaindrops);
   
   //Finds the travel locations hempishere which is used in Seasonal variables later.
   function findHemisphere() {
