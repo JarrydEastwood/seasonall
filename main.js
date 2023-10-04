@@ -463,8 +463,11 @@ function getRandom() {
         var storeSnowfall = avgSnowfall.toFixed(2);
 
         if (storeRainfall > 2.00) {
-          document.getElementById("rain").classList.toggle("hidden");
+          document.getElementById("rain").classList.remove("hidden");
+        } else {
+          document.getElementById("rain").classList.add("hidden");
         }
+
     
             
         document.getElementById("maxTemp").append((storeMaxTemp)+ "");
@@ -493,7 +496,6 @@ function createRaindrops() {
   }
 }
 
-// Запускаємо створення крапель дощу під час завантаження сторінки
 window.addEventListener('load', createRaindrops);
   
   //Finds the travel locations hempishere which is used in Seasonal variables later.
