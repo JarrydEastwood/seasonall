@@ -398,6 +398,7 @@ function getRandom() {
   //API call to Open-Meteo.com to get 3 months of weather data from December 2020 - November 2021, 
   // Function calculates averages of Max Temp, Min Temp, Rainfall, Snowfall, locations timezone and gets the 45th day's Sunrise and Sunset time.
   function getWeather() { 
+    document.getElementById("rain").classList.add("hidden");
   
   
     // Calls functions to get seasonal start and end dates for weatherData 
@@ -464,11 +465,7 @@ function getRandom() {
 
         if (storeRainfall > 2.00) {
           document.getElementById("rain").classList.remove("hidden");
-        } else {
-          document.getElementById("rain").classList.add("hidden");
-        }
-
-    
+        } 
             
         document.getElementById("maxTemp").append((storeMaxTemp)+ "");
         document.getElementById("minTemp").append((storeMinTemp)+ "");
