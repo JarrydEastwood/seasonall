@@ -2,9 +2,9 @@
 
 let imageSrc = 
   [ "assets/images/havana.png",
-    "assets/images/vancouver.png",
-    "assets/images/santorini.png",
-    "assets/images/dubrovnik.png",
+    "assets/images/amsterdam.png",
+    "assets/images/borabora.png",
+    "assets/images/london.png",
     "assets/images/tokyo.png",
     "assets/images/losangeles.png",
     "assets/images/ubud.png",
@@ -86,6 +86,29 @@ var reset = false;
 
   var travelSeason = "";
 
+
+let freezeClic = false; // just modify that variable to disable all clics events
+
+document.addEventListener("click", freezeClicFn, true);
+
+function freezeClicFn(e) {
+  if (freezeClic) {
+    e.stopPropagation();
+    e.preventDefault();
+  }
+}
+
+  // Click Freeze Variables
+function disableClicksFor3s() {
+  freezeClic = true;
+  setTimeout(() => {
+    freezeClic = false;
+  }, 3000);
+
+  } 
+
+
+
   function getData() {
 
   if (document.getElementById("dataCard").classList.contains('hidden')) {
@@ -114,6 +137,8 @@ var reset = false;
         geoKey;
   
       $.getJSON(url, function (apiData) {
+
+        console.log(apiData);
   
         //Storing the first result as variable "item" to allow for easier data sorting
         var item = apiData.results[0];
@@ -176,6 +201,7 @@ var reset = false;
   }
 
 function seasonSpring() {
+  disableClicksFor3s()
   if (document.getElementById("dataCard").classList.contains('hidden')) {
     $(document).ready(function () {
     document.getElementById("content").classList.remove("winter");
@@ -202,6 +228,7 @@ else {
 
 
 function seasonSummer() {
+  disableClicksFor3s()
   if (document.getElementById("dataCard").classList.contains('hidden')) {
     $(document).ready(function () {
     document.getElementById("content").classList.remove("winter");
@@ -225,6 +252,7 @@ function seasonSummer() {
 }
 
 function seasonAutumn() {
+  disableClicksFor3s()
   if (document.getElementById("dataCard").classList.contains('hidden')) {
     $(document).ready(function () {
       document.getElementById("content").classList.remove("winter");
@@ -248,6 +276,7 @@ function seasonAutumn() {
 }
 
 function seasonWinter() {
+  disableClicksFor3s()
   if (document.getElementById("dataCard").classList.contains('hidden')) {
   $(document).ready(function () {
   document.getElementById("content").classList.remove("spring");
@@ -283,9 +312,9 @@ function cardReset(){
 
   function removeActive() {
     document.getElementById("havanaBtn").classList.remove('bg-gray-700');
-    document.getElementById("vancouverBtn").classList.remove('bg-gray-700');
-    document.getElementById("santoriniBtn").classList.remove('bg-gray-700');
-    document.getElementById("dubrovnikBtn").classList.remove('bg-gray-700');
+    document.getElementById("amsterdamBtn").classList.remove('bg-gray-700');
+    document.getElementById("maldivesBtn").classList.remove('bg-gray-700');
+    document.getElementById("londonBtn").classList.remove('bg-gray-700');
     document.getElementById("tokyoBtn").classList.remove('bg-gray-700');
     document.getElementById("losangelesBtn").classList.remove('bg-gray-700');
     document.getElementById("ubudBtn").classList.remove('bg-gray-700');
@@ -295,6 +324,7 @@ function cardReset(){
   }
 
 function destinationHavana() {
+  disableClicksFor3s()
   removeActive();
   document.getElementById("havanaBtn").classList.add('bg-gray-700');
   document.getElementById("travelLocation").value = 'Havana Cuba';
@@ -303,33 +333,37 @@ function destinationHavana() {
   getData();
 }
 
-function destinationVancouver() {
+function destinationAmsterdam() {
+  disableClicksFor3s()
   removeActive();
-  document.getElementById("vancouverBtn").classList.add('bg-gray-700');
-  document.getElementById("travelLocation").value = 'Vancouver Canada';
+  document.getElementById("amsterdamBtn").classList.add('bg-gray-700');
+  document.getElementById("travelLocation").value = 'Amsterdam Netherlands';
   document.getElementById("travelImage").src = imageSrc[1];
   getRandom();
   getData();
 }
-function destinationSantorini() {
+function destinationMaldives() {
+  disableClicksFor3s()
   removeActive();
-  document.getElementById("santoriniBtn").classList.add('bg-gray-700');
-  document.getElementById("travelLocation").value = 'Santorini Greece';
+  document.getElementById("maldivesBtn").classList.add('bg-gray-700');
+  document.getElementById("travelLocation").value = 'Malé Maldives';
   document.getElementById("travelImage").src = imageSrc[2];    
   getRandom();
   getData();
 }
 
-function destinationDubrovnik() {
+function destinationLondon() {
+  disableClicksFor3s()
   removeActive();
-  document.getElementById("dubrovnikBtn").classList.add('bg-gray-700');
-  document.getElementById("travelLocation").value = 'Dubrovnik Croatia';
+  document.getElementById("londonBtn").classList.add('bg-gray-700');
+  document.getElementById("travelLocation").value = 'London England';
   document.getElementById("travelImage").src = imageSrc[3];
   getRandom();
   getData();
 }
 
 function destinationTokyo() {
+  disableClicksFor3s()
   removeActive();
   document.getElementById("tokyoBtn").classList.add('bg-gray-700');
     document.getElementById("travelLocation").value = 'Tokyo Japan';
@@ -339,6 +373,7 @@ function destinationTokyo() {
 }
 
 function destinationLosAngeles() {
+  disableClicksFor3s()
   removeActive();
   document.getElementById("losangelesBtn").classList.add('bg-gray-700');
     document.getElementById("travelLocation").value = 'Los Angeles USA';
@@ -348,6 +383,7 @@ function destinationLosAngeles() {
 }
 
 function destinationUbud() {
+  disableClicksFor3s()
   removeActive();
   document.getElementById("ubudBtn").classList.add('bg-gray-700');
     document.getElementById("travelLocation").value = 'Ubud Indonesia';
@@ -357,6 +393,7 @@ function destinationUbud() {
 }
 
 function destinationNewOrleans() {
+  disableClicksFor3s()
   removeActive();
   document.getElementById("neworleansBtn").classList.add('bg-gray-700');
   document.getElementById("travelLocation").value = 'New Orleans USA';
@@ -366,6 +403,7 @@ function destinationNewOrleans() {
 }
 
 function destinationParis() {
+  disableClicksFor3s()
   removeActive();
   document.getElementById("parisBtn").classList.add('bg-gray-700');
   document.getElementById("travelLocation").value = 'Paris France';
@@ -375,6 +413,7 @@ function destinationParis() {
 }
 
 function destinationMarrakesh() {
+  disableClicksFor3s()
   removeActive();
   document.getElementById("marrakeshBtn").classList.add('bg-gray-700');
   document.getElementById("travelLocation").value = 'Marrakesh Morocco';

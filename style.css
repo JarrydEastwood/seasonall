@@ -9,6 +9,16 @@ body {
     width: 100vw;
   }
 
+  /* style.css */
+.loading {
+  cursor: wait; /* busy cursor feedback */
+}
+
+.loading * {
+  /* disable all mouse events on children elements */
+  pointer-events: none; 
+}
+
   /* I'll use breakpoints to make this scale better */
   .travelImageClass{
     display: block;
