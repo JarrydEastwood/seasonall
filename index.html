@@ -72,7 +72,7 @@
      </div>
     </div>
 
-      <div id="content" class="w-[100vw] h-[100vh] fixed bottom-0">
+      <div id="content" class="travelImageClass rounded-xl w-[70vw] h-[80vh] fixed bottom-0">
       
         <!-- hiding the storage of the data on the screen because I can't figure out how to do this better -->
           <div class="hidden">
@@ -150,23 +150,27 @@
       </div>
     </div>
 
-        
-          <div id="landingScreen" class="block w-[70vw] h-[90vh] fixed bottom-0 left-[15vw]">
+ 
+          <div id="landingScreen" class="rounded-xl w-[70vw] h-[90vh] fixed bottom-0 left-[15vw]">
             <h1 class="text-5xl font-bold text-gray-700 text-center mt-20 mb-10">
               Pick a destination to get started
             </h1>
             <div class="flex items-center my-auto justify-center h-[60vh]">
-              <image id="logo" class="w-[15vw]" src="assets/images/logo.png" alt="Seasonall" />
+              <img id="logo" class="shimmer w-[15vw]" src="assets/images/logo.png" alt="Seasonall" />
             </div>
           </div>
-          
-          <div id="leftClippingMask" class="z-40 w-[15vw] absolute bottom-0 left-0 h-full bg-white"></div>
-          <div id="rightClippingMask" class="z-40 w-[15vw] absolute bottom-0 right-0 h-full bg-white"></div>
-          <image id="travelImage" class="hidden travelImageClass" src="assets/images/havana.png" alt="Seasonall" />
-   
+ 
+     <div class="max-h-[80vh] overflow-hidden">   
+          <div id="leftClippingMask" class="hidden z-40 w-[15vw] absolute bottom-0 left-0 h-full bg-white"></div>
+          <div id="rightClippingMask" class="hidden z-40 w-[15vw] absolute bottom-0 right-0 h-full bg-white"></div>
+          <image id="travelImage" class="hidden rounded-xl travelImageClass" src="assets/images/havana.png" alt="Seasonall" />
+      </div>
+      
       <div id="rain" class=" z-20 absolute hidden w-[100vw] h-[100vh]  bottom-0">
       </div>
       <div id="heavyRain" class=" z-20 absolute hidden w-[100vw] h-[100vh] bottom-0">
+      </div>
+      <div id="snow" class=" z-20 absolute hidden w-[100vw] h-[100vh] bottom-0">
       </div>
 
   </div>

@@ -439,6 +439,7 @@ function getRandom() {
   function getWeather() { 
     document.getElementById("rain").classList.add("hidden");
     document.getElementById("heavyRain").classList.add("hidden");
+    document.getElementById("snow").classList.add("hidden");
   
   
     // Calls functions to get seasonal start and end dates for weatherData 
@@ -509,6 +510,9 @@ function getRandom() {
         if (storeRainfall >= 8.00) {
           document.getElementById("heavyRain").classList.remove("hidden");
         } 
+        if (storeSnowfall > 0.00) {
+          document.getElementById("snow").classList.remove("hidden");
+        } 
             
         document.getElementById("maxTemp").append((storeMaxTemp)+ "");
         document.getElementById("minTemp").append((storeMinTemp)+ "");
@@ -523,34 +527,7 @@ function getRandom() {
     });
   }
   
-function createRaindrops() {
-  const rainContainer = document.getElementById('rain');
-  const dropCount = 100;
 
-  for (let i = 0; i < dropCount; i++) {
-    const drop = document.createElement('div');
-    drop.className = 'drop';
-    drop.style.left = `${Math.random() * 100}%`;
-    drop.style.animationDelay = `${Math.random()}s`;
-    rainContainer.appendChild(drop);
-  }
-}
-
-function createHeavyRaindrops() {
-  const rainContainer = document.getElementById('heavyRain');
-  const dropCount = 500;
-
-  for (let i = 0; i < dropCount; i++) {
-    const heavyDrop = document.createElement('div');
-    heavyDrop.className = 'drop';
-    heavyDrop.style.left = `${Math.random() * 100}%`;
-    heavyDrop.style.animationDelay = `${Math.random()}s`;
-    rainContainer.appendChild(heavyDrop);
-  }
-}
-
-window.addEventListener('load', createRaindrops);
-window.addEventListener('load', createHeavyRaindrops);
   
   //Finds the travel locations hempishere which is used in Seasonal variables later.
   function findHemisphere() {
@@ -630,3 +607,65 @@ window.addEventListener('load', createHeavyRaindrops);
       weatherDateEnd = endSouthAutumn;
     } 
   }
+
+  function createSnow() {
+    // TWEAK VALUES
+    let amount = 200;   // snowfall thickness
+    let baseSize = 1;  // smallest size
+    let sizeModifier = 20;   // size variation
+    let baseDuration = 7;   // fall speed, increase to slow down
+    let durationModifier = 15   // fall speed variation
+    let lowestOpacity = 0.2;  // 0 transparent, 1 opaque
+
+    const snowContainer = document.getElementById('snow');
+
+    let i = 0;
+    while (i < amount) {
+        let flake = document.createElement('i');
+        snowContainer.appendChild(flake);
+
+        let size = baseSize + Math.random() * sizeModifier;
+        let posX = Math.floor(Math.random() * (window.innerWidth + window.innerWidth * 0.8));
+        let delay = Math.random() * -20;
+        let duration = Math.random() * durationModifier + baseDuration;
+
+        flake.style.width = size + 'px';
+        flake.style.height = size + 'px';
+        flake.style.left = posX + 'px';
+        flake.style.animationDelay = delay + 's';
+        flake.style.animationDuration = duration + 's';
+        flake.style.opacity = Math.random() * (1 - lowestOpacity) + lowestOpacity;
+
+        i++;
+    }
+}
+
+function createRaindrops() {
+  const rainContainer = document.getElementById('rain');
+  const dropCount = 100;
+
+  for (let i = 0; i < dropCount; i++) {
+    const drop = document.createElement('div');
+    drop.className = 'drop';
+    drop.style.left = `${Math.random() * 100}%`;
+    drop.style.animationDelay = `${Math.random()}s`;
+    rainContainer.appendChild(drop);
+  }
+}
+
+function createHeavyRaindrops() {
+  const rainContainer = document.getElementById('heavyRain');
+  const dropCount = 500;
+
+  for (let i = 0; i < dropCount; i++) {
+    const heavyDrop = document.createElement('div');
+    heavyDrop.className = 'drop';
+    heavyDrop.style.left = `${Math.random() * 100}%`;
+    heavyDrop.style.animationDelay = `${Math.random()}s`;
+    rainContainer.appendChild(heavyDrop);
+  }
+}
+
+window.addEventListener('load', createRaindrops);
+window.addEventListener('load', createHeavyRaindrops);
+window.addEventListener('load', createSnow);
