@@ -16,20 +16,19 @@ body {
 
 .shimmer {
   display:inline-block;
-  mask-mode: luminance;
   mask: linear-gradient(-60deg,#000 30%,rgba(0, 0, 0, 0.600),#000 70%) right/300% 100%;
   -webkit-mask:linear-gradient(-60deg,#000 30%,rgba(0, 0, 0, 0.600),#000 70%) right/300% 100%;
   background-repeat: no-repeat;
-  animation: shimmer 3.5s ease infinite alternate-reverse;
-  font-size: 50px;
+  animation: shimmer 10s ease infinite alternate;
+  font-size: 80px;
   max-width: 20rem;
 }
 
 @keyframes shimmer {
-  100% {-webkit-mask-position:left}
+  60% {-webkit-mask-position:left}
 }
 @-webkit-keyframes shimmer {
-  100% {-webkit-mask-position:left}
+  60% {-webkit-mask-position:left}
 }
 
 .loading * {
