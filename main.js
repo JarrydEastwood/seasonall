@@ -121,6 +121,7 @@ function disableClicksFor3s() {
 
       document.getElementById("content").classList.add(travelSeason);
       document.getElementById("travelImage").classList.remove("hidden");
+      document.getElementById("cloudContainer").classList.remove("hidden");
       document.getElementById("landingScreen").classList.add("hidden");
   
       // Pulls the travelLocation input from the for and sets it to the variable travelLocation

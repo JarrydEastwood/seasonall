@@ -16,10 +16,11 @@ body {
 
 .shimmer {
   display:inline-block;
-  mask: linear-gradient(60deg,#000 30%,#0005,#000 70%) left/300% 100%;
-  -webkit-mask:linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/300% 100%;
+  mask-mode: luminance;
+  mask: linear-gradient(-60deg,#000 30%,rgba(0, 0, 0, 0.600),#000 70%) right/300% 100%;
+  -webkit-mask:linear-gradient(-60deg,#000 30%,rgba(0, 0, 0, 0.600),#000 70%) right/300% 100%;
   background-repeat: no-repeat;
-  animation: shimmer 3.5s infinite alternate-reverse;
+  animation: shimmer 3.5s ease infinite alternate-reverse;
   font-size: 50px;
   max-width: 20rem;
 }
@@ -455,9 +456,9 @@ body {
 }
   /* Seasonal Background gradients */
   .winter {
-  background: linear-gradient(to right, #5cddc3, #37529c);
-  background-size: 600% 600%;
-  animation: gradient 7s ease infinite;
+  background: linear-gradient(to right,#07beb8, #68d8d6, #c4fff9);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
   height: 100vh;
   }
   
@@ -581,3 +582,52 @@ body {
     position: inherit; 
   }
 
+  #cloudContainer {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+  }
+  
+  #cloud {
+    background: rgba(255, 255, 255);
+    width: 21rem; 
+    height: 7rem;
+    border-radius: 10rem;	
+    box-shadow: 10px 10px rgba(0,0,0,0.2);
+    animation: move 20s infinite;
+  }
+  
+  #cloud:after {
+    content: '';
+    background: rgba(255, 255, 255);
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: -50px;
+    left: 50px;
+  }
+  
+  #cloud:before {
+    content: '';
+    background: rgba(255, 255, 255);
+    position: absolute;
+    width: 170px;
+    height: 150px;
+    border-radius: 50%;
+    top: -90px;
+    right: 40px;
+  }
+  
+  @keyframes move {
+    0% {
+      transform: translatex(0);
+    }
+    25% {
+      transform: translatex(-10vw);
+    }
+    75% {
+      transform: translatex(40vw);
+    }
+  }
