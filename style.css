@@ -199,17 +199,6 @@ body {
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     z-index: 20;
   }
- 
-  /* Heading above photos - What City + Country can look like in Season */
-  .photoHeading h2{
-    font-family: "Poppins", sans-serif;
-    width: 80vw;
-    font-size: 2.5rem;
-    font-weight: 400;
-    margin: 2vh auto;
-    color: white;
-    vertical-align: middle;
-  }
 
 /* Setting heading text sizes and weights */
   h1 {
@@ -455,35 +444,30 @@ body {
 }
   /* Seasonal Background gradients */
   .winter {
-  background: linear-gradient(to right,#07beb8, #68d8d6, #c4fff9);
+  background: linear-gradient(to right,#4dddd8, #68bcd8, #5de7ff);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   height: 100vh;
   }
   
   .summer {
-  background-image: linear-gradient(
-      270.2deg,
-      rgb(230, 191, 0) 10.4%,
-      rgb(192, 67, 0) 43.8%,
-      rgba(0, 93, 219, 1) 105.8%
-  );
+    background: linear-gradient(to right,#26dbff, #fa6900, #fa2e00);
   background-size: 400% 400%;
-  animation: gradient 7s ease infinite;
+  animation: gradient 15s ease infinite;
   height: 100vh;
   }
   
  .spring {
-  background: linear-gradient(to right, #5cddc3, #409c37);
+  background: linear-gradient(to right, #07beb8, #14a4e7, #229018);
   background-size: 400% 400%;
-  animation: gradient 7s ease infinite;
+  animation: gradient 15s ease infinite;
   height: 100vh;
   }
   
   .autumn {
-  background: linear-gradient(to right, #f3904f, #3b4371);
+  background: linear-gradient(to right, #E3A184, #EBBC4E, #C26E60);
   background-size: 400% 400%;
-  animation: gradient 7s ease infinite;
+  animation: gradient 15s ease infinite;
   height: 100vh;
   }
 
@@ -588,45 +572,85 @@ body {
     transform: translate(-50%,-50%);
   }
   
-  #cloud {
+  #cloud1 {
     background: rgba(255, 255, 255);
-    width: 21rem; 
-    height: 7rem;
-    border-radius: 10rem;	
+    width: 12rem; 
+    height: 5rem;
+    border-radius: 3rem;	
     box-shadow: 10px 10px rgba(0,0,0,0.2);
-    animation: move 20s infinite;
+    animation: moveOne 40s infinite alternate;
   }
   
-  #cloud:after {
+  #cloud1:after {
     content: '';
     background: rgba(255, 255, 255);
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 5rem;
+    height: 5rem;
     border-radius: 50%;
-    top: -50px;
-    left: 50px;
+    top: -3rem;
+    left: 5rem;
   }
   
-  #cloud:before {
+  #cloud1:before {
     content: '';
     background: rgba(255, 255, 255);
     position: absolute;
-    width: 170px;
-    height: 150px;
+    width: 6rem;
+    height: 5.5rem;
     border-radius: 50%;
-    top: -90px;
-    right: 40px;
+    top: -3.5rem;
+    right: 5rem;
+  }
+
+  #cloud2 {
+    background: rgba(255, 255, 255);
+    width: 8rem; 
+    height: 3rem;
+    border-radius: 3rem;	
+    box-shadow: 10px 10px rgba(0,0,0,0.2);
+    animation: moveTwo 35s infinite alternate;
   }
   
-  @keyframes move {
+  #cloud2:after {
+    content: '';
+    background: rgba(255, 255, 255);
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    top: -1rem;
+    left: 1rem;
+  }
+  
+  #cloud2:before {
+    content: '';
+    background: rgba(255, 255, 255);
+    position: absolute;
+    width: 3rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    top: -1.5rem;
+    right: 1rem;
+  }
+
+  @keyframes moveOne {
     0% {
       transform: translatex(0);
     }
     25% {
-      transform: translatex(-10vw);
+      transform: translatex(-5vw);
     }
-    75% {
-      transform: translatex(40vw);
+    100% {
+      transform: translatex(45vw);
+    }
+  }
+  
+  @keyframes moveTwo {
+    0% {
+      transform: translatex(55vw);
+    }
+    100% {
+      transform: translatex(-5vw);
     }
   }

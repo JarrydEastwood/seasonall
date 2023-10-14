@@ -99,11 +99,11 @@ function freezeClicFn(e) {
 }
 
   // Click Freeze Variables
-function disableClicksFor3s() {
+function disableClicksFor1s() {
   freezeClic = true;
   setTimeout(() => {
     freezeClic = false;
-  }, 3000);
+  }, 1000);
 
   } 
 
@@ -119,10 +119,23 @@ function disableClicksFor3s() {
 
       eval("season"+ travelSeason + "()");
 
+      if (travelSeason === "Winter") { 
+        document.getElementById("winterCB").checked = true;
+      } else if (travelSeason === "Spring") {
+        document.getElementById("springCB").checked = true;
+      } else if (travelSeason === "Summer") {
+        document.getElementById("summerCB").checked = true;
+      }
+      else {
+        document.getElementById("autumnCB").checked = true;
+      }
+    
       document.getElementById("content").classList.add(travelSeason);
       document.getElementById("travelImage").classList.remove("hidden");
       document.getElementById("cloudContainer").classList.remove("hidden");
       document.getElementById("landingScreen").classList.add("hidden");
+
+      
   
       // Pulls the travelLocation input from the for and sets it to the variable travelLocation
       travelLocation = document.getElementById("travelLocation").value;
@@ -139,8 +152,7 @@ function disableClicksFor3s() {
   
       $.getJSON(url, function (apiData) {
 
-        console.log(apiData);
-  
+
         //Storing the first result as variable "item" to allow for easier data sorting
         var item = apiData.results[0];
   
@@ -202,7 +214,7 @@ function disableClicksFor3s() {
   }
 
 function seasonSpring() {
-  disableClicksFor3s()
+  disableClicksFor1s()
   if (document.getElementById("dataCard").classList.contains('hidden')) {
     $(document).ready(function () {
     document.getElementById("content").classList.remove("winter");
@@ -229,7 +241,7 @@ else {
 
 
 function seasonSummer() {
-  disableClicksFor3s()
+  disableClicksFor1s()
   if (document.getElementById("dataCard").classList.contains('hidden')) {
     $(document).ready(function () {
     document.getElementById("content").classList.remove("winter");
@@ -253,7 +265,7 @@ function seasonSummer() {
 }
 
 function seasonAutumn() {
-  disableClicksFor3s()
+  disableClicksFor1s()
   if (document.getElementById("dataCard").classList.contains('hidden')) {
     $(document).ready(function () {
       document.getElementById("content").classList.remove("winter");
@@ -277,7 +289,7 @@ function seasonAutumn() {
 }
 
 function seasonWinter() {
-  disableClicksFor3s()
+  disableClicksFor1s()
   if (document.getElementById("dataCard").classList.contains('hidden')) {
   $(document).ready(function () {
   document.getElementById("content").classList.remove("spring");
@@ -312,22 +324,22 @@ function cardReset(){
 }
 
   function removeActive() {
-    document.getElementById("havanaBtn").classList.remove('bg-gray-700');
-    document.getElementById("amsterdamBtn").classList.remove('bg-gray-700');
-    document.getElementById("maldivesBtn").classList.remove('bg-gray-700');
-    document.getElementById("londonBtn").classList.remove('bg-gray-700');
-    document.getElementById("tokyoBtn").classList.remove('bg-gray-700');
-    document.getElementById("losangelesBtn").classList.remove('bg-gray-700');
-    document.getElementById("ubudBtn").classList.remove('bg-gray-700');
-    document.getElementById("neworleansBtn").classList.remove('bg-gray-700');
-    document.getElementById("parisBtn").classList.remove('bg-gray-700');
-    document.getElementById("marrakeshBtn").classList.remove('bg-gray-700');
+    document.getElementById("havanaBtn").classList.remove('bg-purple-700');
+    document.getElementById("amsterdamBtn").classList.remove('bg-purple-700');
+    document.getElementById("maldivesBtn").classList.remove('bg-purple-700');
+    document.getElementById("londonBtn").classList.remove('bg-purple-700');
+    document.getElementById("tokyoBtn").classList.remove('bg-purple-700');
+    document.getElementById("losangelesBtn").classList.remove('bg-purple-700');
+    document.getElementById("ubudBtn").classList.remove('bg-purple-700');
+    document.getElementById("neworleansBtn").classList.remove('bg-purple-700');
+    document.getElementById("parisBtn").classList.remove('bg-purple-700');
+    document.getElementById("marrakeshBtn").classList.remove('bg-purple-700');
   }
 
 function destinationHavana() {
-  disableClicksFor3s()
+  disableClicksFor1s()
   removeActive();
-  document.getElementById("havanaBtn").classList.add('bg-gray-700');
+  document.getElementById("havanaBtn").classList.add('bg-purple-700');
   document.getElementById("travelLocation").value = 'Havana Cuba';
   document.getElementById("travelImage").src = imageSrc[0];
   getRandom();
@@ -335,18 +347,18 @@ function destinationHavana() {
 }
 
 function destinationAmsterdam() {
-  disableClicksFor3s()
+  disableClicksFor1s()
   removeActive();
-  document.getElementById("amsterdamBtn").classList.add('bg-gray-700');
+  document.getElementById("amsterdamBtn").classList.add('bg-purple-700');
   document.getElementById("travelLocation").value = 'Amsterdam Netherlands';
   document.getElementById("travelImage").src = imageSrc[1];
   getRandom();
   getData();
 }
 function destinationMaldives() {
-  disableClicksFor3s()
+  disableClicksFor1s()
   removeActive();
-  document.getElementById("maldivesBtn").classList.add('bg-gray-700');
+  document.getElementById("maldivesBtn").classList.add('bg-purple-700');
   document.getElementById("travelLocation").value = 'Malé Maldives';
   document.getElementById("travelImage").src = imageSrc[2];    
   getRandom();
@@ -354,9 +366,9 @@ function destinationMaldives() {
 }
 
 function destinationLondon() {
-  disableClicksFor3s()
+  disableClicksFor1s()
   removeActive();
-  document.getElementById("londonBtn").classList.add('bg-gray-700');
+  document.getElementById("londonBtn").classList.add('bg-purple-700');
   document.getElementById("travelLocation").value = 'London England';
   document.getElementById("travelImage").src = imageSrc[3];
   getRandom();
@@ -364,9 +376,9 @@ function destinationLondon() {
 }
 
 function destinationTokyo() {
-  disableClicksFor3s()
+  disableClicksFor1s()
   removeActive();
-  document.getElementById("tokyoBtn").classList.add('bg-gray-700');
+  document.getElementById("tokyoBtn").classList.add('bg-purple-700');
     document.getElementById("travelLocation").value = 'Tokyo Japan';
     document.getElementById("travelImage").src = imageSrc[4];
     getRandom();
@@ -374,9 +386,9 @@ function destinationTokyo() {
 }
 
 function destinationLosAngeles() {
-  disableClicksFor3s()
+  disableClicksFor1s()
   removeActive();
-  document.getElementById("losangelesBtn").classList.add('bg-gray-700');
+  document.getElementById("losangelesBtn").classList.add('bg-purple-700');
     document.getElementById("travelLocation").value = 'Los Angeles USA';
     document.getElementById("travelImage").src = imageSrc[5];
     getRandom();
@@ -384,9 +396,9 @@ function destinationLosAngeles() {
 }
 
 function destinationUbud() {
-  disableClicksFor3s()
+  disableClicksFor1s()
   removeActive();
-  document.getElementById("ubudBtn").classList.add('bg-gray-700');
+  document.getElementById("ubudBtn").classList.add('bg-purple-700');
     document.getElementById("travelLocation").value = 'Ubud Indonesia';
     document.getElementById("travelImage").src = imageSrc[6];
     getRandom();
@@ -394,9 +406,9 @@ function destinationUbud() {
 }
 
 function destinationNewOrleans() {
-  disableClicksFor3s()
+  disableClicksFor1s()
   removeActive();
-  document.getElementById("neworleansBtn").classList.add('bg-gray-700');
+  document.getElementById("neworleansBtn").classList.add('bg-purple-700');
   document.getElementById("travelLocation").value = 'New Orleans USA';
   document.getElementById("travelImage").src = imageSrc[7];
   getRandom();
@@ -404,9 +416,9 @@ function destinationNewOrleans() {
 }
 
 function destinationParis() {
-  disableClicksFor3s()
+  disableClicksFor1s()
   removeActive();
-  document.getElementById("parisBtn").classList.add('bg-gray-700');
+  document.getElementById("parisBtn").classList.add('bg-purple-700');
   document.getElementById("travelLocation").value = 'Paris France';
   document.getElementById("travelImage").src = imageSrc[8];
   getRandom();
@@ -414,9 +426,9 @@ function destinationParis() {
 }
 
 function destinationMarrakesh() {
-  disableClicksFor3s()
+  disableClicksFor1s()
   removeActive();
-  document.getElementById("marrakeshBtn").classList.add('bg-gray-700');
+  document.getElementById("marrakeshBtn").classList.add('bg-purple-700');
   document.getElementById("travelLocation").value = 'Marrakesh Morocco';
   document.getElementById("travelImage").src = imageSrc[9];
   getRandom();
@@ -424,10 +436,8 @@ function destinationMarrakesh() {
 }
   
 function getRandom() {
-  console.log("getRandom");
   const randomMonth = Math.floor(Math.random() * month.length);
   travelMonth = (randomMonth, month[randomMonth]);
-  console.log("getRandom " + travelMonth);
   document.getElementById("travelMonth").value = travelMonth;
 }
               
@@ -505,10 +515,10 @@ function getRandom() {
         var storeRainfall = avgRainfall.toFixed(2);
         var storeSnowfall = avgSnowfall.toFixed(2);
 
-        if (storeRainfall > 2.00 && storeRainfall < 8.00) {
+        if (storeRainfall > 3.20 && storeRainfall < 9.00) {
           document.getElementById("rain").classList.remove("hidden");
         } 
-        if (storeRainfall >= 8.00) {
+        if (storeRainfall >= 9.00) {
           document.getElementById("heavyRain").classList.remove("hidden");
         } 
         if (storeSnowfall > 0.00) {
@@ -670,3 +680,144 @@ function createHeavyRaindrops() {
 window.addEventListener('load', createRaindrops);
 window.addEventListener('load', createHeavyRaindrops);
 window.addEventListener('load', createSnow);
+
+const winterCheck = document.getElementById("winterCB");
+function handleWinterInput() {
+  const { checked } = this;
+  seasonWinter();
+}
+winterCheck.addEventListener('input', handleWinterInput);
+
+const autumnCheck = document.getElementById("autumnCB");
+function handleAutumnInput() {
+  const { checked } = this;
+ seasonAutumn();
+}
+autumnCheck.addEventListener('input', handleAutumnInput);
+
+const springCheck = document.getElementById("springCB");
+function handleSpringInput() {
+  const { checked } = this;
+  seasonSpring();
+}
+springCheck.addEventListener('input', handleSpringInput);
+
+const summerCheck = document.getElementById("summerCB");
+function handleSummerInput() {
+  const { checked } = this;
+  seasonSummer();
+}
+summerCheck.addEventListener('input', handleSummerInput);
+
+
+function seasonSpring() {
+  disableClicksFor1s()
+  document.getElementById("winterCB").checked = false;
+  document.getElementById("summerCB").checked = false;
+  document.getElementById("autumnCB").checked = false;  
+  if (document.getElementById("dataCard").classList.contains('hidden')) {
+    $(document).ready(function () {
+    document.getElementById("content").classList.remove("winter");
+    document.getElementById("content").classList.remove("summer");
+    document.getElementById("content").classList.remove("autumn");
+    document.getElementById("content").classList.add("spring");
+})}
+
+else {
+  $(document).ready(function () {
+    document.getElementById("content").classList.remove("winter");
+    document.getElementById("content").classList.remove("summer");
+    document.getElementById("content").classList.remove("autumn");
+    document.getElementById("content").classList.add("spring");
+
+    // Need to reset to data and call new season here
+    cardReset();
+    travelSeason = "Spring";
+    document.getElementById("season").append(travelSeason);
+
+    getWeather();
+  })}
+}
+
+
+function seasonSummer() {
+  disableClicksFor1s()
+  document.getElementById("winterCB").checked = false;
+  document.getElementById("springCB").checked = false;
+  document.getElementById("autumnCB").checked = false;  
+  if (document.getElementById("dataCard").classList.contains('hidden')) {
+    $(document).ready(function () {
+    document.getElementById("content").classList.remove("winter");
+    document.getElementById("content").classList.remove("spring");
+    document.getElementById("content").classList.remove("autumn");
+    document.getElementById("content").classList.add("summer");
+  })}
+
+  else {
+      $(document).ready(function () {
+      document.getElementById("content").classList.remove("winter");
+      document.getElementById("content").classList.remove("spring");
+      document.getElementById("content").classList.remove("autumn");
+      document.getElementById("content").classList.add("summer");
+      // Need to reset to weather data and call new season here
+      cardReset();
+      travelSeason = "Summer";
+      document.getElementById("season").append(travelSeason);
+      getWeather();
+    })}
+}
+
+function seasonAutumn() {
+  disableClicksFor1s()
+  document.getElementById("winterCB").checked = false;
+  document.getElementById("springCB").checked = false;
+  document.getElementById("summerCB").checked = false;  
+  if (document.getElementById("dataCard").classList.contains('hidden')) {
+    $(document).ready(function () {
+      document.getElementById("content").classList.remove("winter");
+      document.getElementById("content").classList.remove("spring");
+      document.getElementById("content").classList.remove("summer");
+      document.getElementById("content").classList.add("autumn");
+    })}
+  
+    else {
+      $(document).ready(function () {
+        document.getElementById("content").classList.remove("winter");
+        document.getElementById("content").classList.remove("spring");
+        document.getElementById("content").classList.remove("summer");
+        document.getElementById("content").classList.add("autumn");
+      // Need to reset to weather data and call new season here
+        cardReset();
+        travelSeason = "Autumn";
+        document.getElementById("season").append(travelSeason);
+        getWeather();
+      })}
+}
+
+function seasonWinter() {
+  disableClicksFor1s()
+  document.getElementById("summerCB").checked = false;
+  document.getElementById("springCB").checked = false;
+  document.getElementById("autumnCB").checked = false;  
+  if (document.getElementById("dataCard").classList.contains('hidden')) {
+  $(document).ready(function () {
+  document.getElementById("content").classList.remove("spring");
+  document.getElementById("content").classList.remove("summer");
+  document.getElementById("content").classList.remove("autumn");
+  document.getElementById("content").classList.add("winter");
+  })}
+
+  else {
+    $(document).ready(function () {
+    document.getElementById("content").classList.remove("spring");
+    document.getElementById("content").classList.remove("summer");
+    document.getElementById("content").classList.remove("autumn");
+    document.getElementById("content").classList.add("winter");
+  // Need to reset to weather data and call new season here
+    cardReset();
+    travelSeason = "Winter";
+    document.getElementById("season").append(travelSeason);
+    getWeather();
+
+    })}
+}
