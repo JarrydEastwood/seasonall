@@ -578,7 +578,7 @@ body {
     height: 5rem;
     border-radius: 3rem;	
     box-shadow: 10px 10px rgba(0,0,0,0.2);
-    animation: moveOne 40s infinite alternate;
+    animation: moveOne 25s infinite alternate;
   }
   
   #cloud1:after {
@@ -609,7 +609,7 @@ body {
     height: 3rem;
     border-radius: 3rem;	
     box-shadow: 10px 10px rgba(0,0,0,0.2);
-    animation: moveTwo 35s infinite alternate;
+    animation: moveTwo 28s infinite alternate;
   }
   
   #cloud2:after {
