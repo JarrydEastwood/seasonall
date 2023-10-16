@@ -115,27 +115,7 @@ function disableClicksFor1s() {
 
       $(document).ready(function () {
       //Calling function to find hemisphere of travel location
-      findHemisphere();
-
-      eval("season"+ travelSeason + "()");
-
-      if (travelSeason === "Winter") { 
-        document.getElementById("winterCB").checked = true;
-      } else if (travelSeason === "Spring") {
-        document.getElementById("springCB").checked = true;
-      } else if (travelSeason === "Summer") {
-        document.getElementById("summerCB").checked = true;
-      }
-      else {
-        document.getElementById("autumnCB").checked = true;
-      }
-    
-      document.getElementById("content").classList.add(travelSeason);
-      document.getElementById("travelImage").classList.remove("hidden");
-      document.getElementById("cloudContainer").classList.remove("hidden");
-      document.getElementById("landingScreen").classList.add("hidden");
-
-      
+           
   
       // Pulls the travelLocation input from the for and sets it to the variable travelLocation
       travelLocation = document.getElementById("travelLocation").value;
@@ -162,6 +142,7 @@ function disableClicksFor1s() {
         var storeLat = item.lat;
         var storeLong = item.lon;
   
+        
         // Storing city and country in variables to be used by APIs
         travelCity = storeCity;
         travelCountry = storeCountry;
@@ -171,6 +152,28 @@ function disableClicksFor1s() {
         travelLong = storeLong.toFixed(2);
   
    
+        findHemisphere();
+
+        eval("season"+ travelSeason + "()");
+  
+        if (travelSeason === "Winter") { 
+          document.getElementById("winterCB").checked = true;
+        } else if (travelSeason === "Spring") {
+          document.getElementById("springCB").checked = true;
+        } else if (travelSeason === "Summer") {
+          document.getElementById("summerCB").checked = true;
+        }
+        else {
+          document.getElementById("autumnCB").checked = true;
+        }
+      
+        document.getElementById("content").classList.add(travelSeason);
+        document.getElementById("travelImage").classList.remove("hidden");
+        document.getElementById("cloudContainer").classList.remove("hidden");
+        document.getElementById("landingScreen").classList.add("hidden");
+
+        
+
         // Getting content on the page
           // Creating variables with HTML Tags to display the data on page.
           // The class "capitilise" (re)capitalises the travel month after it was put into lower case to be used in seasonal functions.
@@ -181,6 +184,8 @@ function disableClicksFor1s() {
         var hemi = $("<p>").html("Hemisphere: " + hemisphere);
         var month = $('<p class="capitilise">').html("Month: " + travelMonth);
         var season = $("<p>").html("Season: " + travelSeason);
+
+       
   
         // Appending the HTML variables to relevant container using the class
         // $(".containerLocation").append(
