@@ -438,6 +438,22 @@ body {
   text-transform: capitalize;
   }
   
+  .spaceGrotesk {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  
+  #buttonPurple{
+    background-color: #8D5E9F;
+    border: 2px solid #9b72ab;
+  }
+  
+  #buttonPurple:hover{
+    background-color: #3359B9;
+    border: 2px solid #5879cc;
+    text-underline-offset: 0.25em;
+    text-decoration: underline;
+  }
 
 .test{
   background-color: hotpink;
